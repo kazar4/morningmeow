@@ -16,5 +16,5 @@ python for backend
 sqlite3 for database
 
 
-## Technolgoies:
+## Technologies:
 particles.js, stripe, gunicorn, flask, express, google mail api, twilio, apache2
