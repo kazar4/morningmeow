@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Checkout</title>
+  <script src="https://js.stripe.com/v3/"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="inputs-middle"> 
+<h1>Morning Meow</h1>
+<br>
+<label for="name"> Name </label>
+<input type="text" id="name"> </input>
+<br>
+<label for="number"> Number </label>
+<input type="tel" id="number"> </input>
+<br>
+<textarea rows="1" style="height:1em;" id="message" placeholder="Personal Message"></textarea>
+<br>
+<div id="timezone"></div>
+<div>
+  <label for="premium">Buy Premium</label>
+  <input type="checkbox" id="premium" name="premium" onclick="checkPremium()">
+</div>
+<button type="button" id="signup" onclick="connect()"> Sign Up!</button>
+
+<div id="all-payment">
+<div id="payment-regular">
+</div>
+
+<div id="payment-request-button">
+  <!-- A Stripe Element will be inserted here. 
+  goodmeowning-->
+</div>
+</div>
+</div>
+
+</body>
+  <script src="timezone.js"></script>
+  <script src="socket.js"></script>
+  <script src="script.js"></script>
+  <script src="client.js"></script>
+</html>

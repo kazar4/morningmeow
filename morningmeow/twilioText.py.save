@@ -1,0 +1,52 @@
+from twilio.rest import Client
+
+import fileManage2
+
+def handleMMS(row, type):
+
+    curr_day = row[8]
+    number = row[0]
+
+    if type == "reg":
+        if curr_day != fileManage2.maxDay:
+            sendMMS(number, "", fileManage2.getGlobalDay())
+        elif curr_day == fileManage2.maxDay:
+            sendMMS(number, "The {} days be up, oof".format(fileManage2.maxDay), 0)
+            fileManage2.deleteData(number)
+    elif type == "welcome":
+"Welcome to the 5 day beta of " \
+                                  "MorningMeow! respond with STOP to cancel" \
+                                  "here is a message from the person who signed you up:\n{}".
+        sendMMS(number, "Welcome to the 5 day beta of " \
+                                  "MorningMeow! respond with STOP to cancel", fileManage2.getGlobalDay())
+    elif type == "end":
+        sendMMS(number, "Goodbye, its been real", 0)
+        fileManage2.deleteData(number)
+
+def sendMMS(number, text, day):
+    # Your Account SID from twilio.com/console
+    account_sid = "AC8c8d2bf0f4417c73d534c54ac9677968"
+    # Your Auth Token from twilio.com/console
+    auth_token = "a5896395dc0421e6232d946b577703cd"
+
+    client = Client(account_sid, auth_token)
+
+    if text != "" and day != 0:
+        message = client.messages.create(
+            to="+1" + str(number),
+            from_="+12018176370",
+            body = text,
+            media_url=['https://morningmeow.com/MCI/{}.jpg'.format(day)])
+    elif text == "" and day != 0:
+        message = client.messages.create(
+            to="+1" + str(number),
+            from_="+12018176370",
+            media_url=['https://morningmeow.com/MCI/{}.jpg'.format(day)])
+    else:
+        message = client.messages.create(
+            to="+1" + str(number),
+            from_="+12018176370",
+            body=text)
+
+    print(message.sid)
+

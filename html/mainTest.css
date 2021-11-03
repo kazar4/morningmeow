@@ -1,0 +1,464 @@
+
+/*-----------------input form----------------------------*/
+
+.wrap-input100-form {
+  width: 100%;
+  height: 150%;
+  background-color: #fff;
+  border-radius: 31px;
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.input100-form {
+  padding: 12px 19px;
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 150%;
+  background: #fff;
+  border-radius: 31px;
+  font-family: Ubuntu-Bold;
+  font-size: 18px;
+  color: #8f8fa1;
+  line-height: 2;
+  /* border-width: 4px; */
+  border-width: 0px;
+  padding-left: 17px;
+}
+
+#timezone option{
+  -webkit-appearance: none;
+  font-family: Ubuntu-Bold;
+}
+
+.placeholder {
+  position: relative;
+  display: block;
+  width: 100%;
+  background: #fff;
+  border-radius: 31px;
+  font-family: Ubuntu-Bold;
+  font-size: 18px;
+  color: #bdbdd3;
+  line-height: 1.2;
+}
+
+
+/*---------------------------------------------*/
+
+
+/*----------------------checkbox-----------------------*/
+
+.input100-form-check {
+  padding: 5px 20px;
+  position: relative;
+  display: block;
+  width: 100%;
+  background: #fff;
+  border-radius: 31px;
+  font-family: Ubuntu-Bold;
+  font-size: 18px;
+  color: #8f8fa1;
+  line-height: 2;
+}
+
+.check {
+  border-radius: 31px;
+  position: relative;
+  float:right;
+}
+
+.inputGroup {
+  border-radius: 31px;
+  background-color: #fff;
+  display: block;
+  margin: 10px 0;
+  position: relative;
+}
+.inputGroup label {
+  /* padding: 10px 30px; */
+  padding: 10px 19px;
+  width: 100%;
+  display: block;
+  text-align: left;
+  color: #3C454C;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  transition: color 200ms ease-in;
+  overflow: hidden;
+}
+
+#intText {
+  position: relative; 
+  margin-right: 50px;
+}
+
+.inputGroup label:before {
+  width: 10px;
+  height: 10px;
+  /* border-radius: 50%; */
+  border-radius: 31px;
+  content: "";
+  background-color: #5562eb;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale3d(1, 1, 1);
+  transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  z-index: -1;
+}
+.inputGroup label:after {
+  width: 32px;
+  height: 32px;
+  content: "";
+  border: 2px solid #D1D7DC;
+  background-color: #fff;
+  background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.414 11L4 12.414l5.414 5.414L20.828 6.414 19.414 5l-10 10z' fill='%23fff' fill-rule='nonzero'/%3E%3C/svg%3E ");
+  background-repeat: no-repeat;
+  background-position: 2px 3px;
+  /* border-radius: 50%; */
+  border-radius: 31px;
+  z-index: 2;
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  transition: all 200ms ease-in;
+}
+.inputGroup input:checked ~ label {
+  border-radius: 31px;
+  color: #fff;
+}
+.inputGroup input:checked ~ label:before {
+  border-radius: 31px;
+  transform: translate(-50%, -50%) scale3d(56, 56, 1);
+  opacity: 1;
+}
+.inputGroup input:checked ~ label:after {
+  border-radius: 31px;
+  background-color: #54E0C7;
+  border-color: #54E0C7;
+}
+.inputGroup input {
+  border-radius: 31px;
+  width: 32px;
+  height: 32px;
+  order: 1;
+  z-index: 2;
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  visibility: hidden;
+}
+
+.form {
+  border-radius: 31px;
+  padding: 0 16px;
+  max-width: 550px;
+  margin: 50px auto;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 36px;
+}
+
+body {
+  /* background-color: #D1D7DC; */
+  font-family: "Fira Sans", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* html {
+  box-sizing: border-box;
+}
+
+code {
+  background-color: #9aa3ac;
+  padding: 0 8px;
+} */
+
+ .check {
+  border-radius: 31px;
+   width: 32px;
+   height: 32px;
+   order: 1;
+   z-index: 2;
+   position: absolute;
+   right: 30px;
+   top: 50%;
+   transform: translateY(-50%);
+   cursor: pointer;
+   visibility: hidden;
+}
+
+/*---------------------------------------------*/
+
+/*---------------------payment--------------------*/
+#all-payment {
+  padding-top: 4%;
+  padding-left: 3%;
+  padding-right: 3%;
+}
+
+ /* #payment-regular #submit {
+  padding-top: 10%;
+}
+
+#payment-regular #submit span {
+  padding-bottom: 10%;
+  position: relative;
+} */
+
+#card-element {
+  max-width: 400px;
+  margin: 0 auto;
+  padding-top: 1%;
+}
+
+#payment-request-button {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+/*---------------------popup------------------------*/
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 5; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  padding-top: 15%;
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+  /* width: 50%; */
+}
+
+@media (max-width: 400px) {
+  .modal-content {
+    width: 80%;
+  }
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.popup{
+  position: relative;
+  display: block;
+  font-family: Ubuntu-Bold;
+  font-size: 14px;
+  color: #bdbdd3;
+  line-height: 1.2;
+  /* padding-right: 50%; */
+  width: fit-content;
+  width: -moz-fit-content;
+}
+
+/*---------------------particles------------------------*/
+
+canvas {
+  display:block;
+}
+
+#particles-js {
+  width: 100%;
+  height: 100%;
+  /* background-color: #FFFFFF; */
+  background-image: url('');
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  display:block;
+  position: absolute;
+}
+
+/*---------------------Logo------------------------*/
+
+#logo {
+  display: block;
+  text-align: center;
+  padding: 15px;
+  position: relative;
+  z-index: 1;
+  /* height:600px;
+  width:600px;  */
+  /* pointer-events: none;
+  background:url('logoNew.png'); */
+}
+
+
+#logo img{
+  width: 100%;
+}
+
+/* #logoCat {
+  display: block;
+  text-align: center;
+  padding: 15px;
+  position: relative;
+  z-index: 1;
+  background: transparent;
+}
+
+
+#logoCat {
+  width: 100%;
+  pointer-events: none;
+} */
+
+/*---------------------Info Text------------------------*/
+
+#info {
+  font-family: Ubuntu-Bold;
+  font-size: 18px;
+  color: #8f8fa1;
+  line-height: 1.2;
+  padding: 0 20px;
+  padding-bottom: 13px;
+  position: relative;
+  z-index: 3;
+}
+
+
+/*---------------------Footer------------------------*/
+
+.hfooter {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: red;
+  color: white;
+  text-align: center;
+}
+
+.footer {
+  border-radius: 30px;
+  background-image: linear-gradient(to right, #615b5c00, #4c4ce410, #615b5c00);
+  width: 100%;
+  position: relative;
+  text-align: center;
+}
+    
+.jfooter {
+background-image: linear-gradient(to right, #c10f3f, #010168);
+padding: 1em;
+width: 100%;
+top: 100%;
+position: absolute;
+
+filter: blur(5px);
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+}
+
+/*---------------------Footer Links------------------------*/
+
+#genInfo:hover {
+    cursor: pointer;
+    color: #0056b3;
+}
+
+#QA:hover {
+  cursor: pointer;
+  color: #0056b3;
+}
+
+#name {
+  outline: none;
+  border: none;
+}
+
+#number {
+  outline: none;
+  border: none;
+}
+
+/*---------------------Snack Bar------------------------*/
+
+/* The snackbar - position it at the bottom and in the middle of the screen */
+#snackbar {
+  visibility: hidden; /* Hidden by default. Visible on click */
+  max-width: 340px; /* Set a default minimum width */
+  margin-left: -170px; /* Divide value of min-width by 2 */
+  background-color: #333; /* Black background color */
+  color: #fff; /* White text color */
+  text-align: center; /* Centered text */
+  border-radius: 12px; /* Rounded borders */
+  padding: 16px; /* Padding */
+  position: fixed; /* Sit on top of the screen */
+  z-index: 10; /* Add a z-index if needed */
+  left: 50%; /* Center the snackbar */
+  bottom: 30px; /* 30px from the bottom */
+}
+
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+#snackbar.show {
+  visibility: visible; /* Show the snackbar */
+  /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+  However, delay the fade out process for 2.5 seconds */
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 8.5s;
+  animation: fadein 0.5s, fadeout 0.5s 8.5s;
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}

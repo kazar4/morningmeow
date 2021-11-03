@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Morning Meow</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" 
+	content="Sign up with the recipient's name to send them a cat picture, EVERY DAY!
+	
+																						  
+																						  
+																						  
+																						  
+																						  
+	                                                                                      
+	">
+	<meta name="keywords" content="meow, cat, morning, text, kitten, CAT, MEOW, MORNING, MOEW">
+
+
+	<script src="https://js.stripe.com/v3/"></script>
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="images/icons/favicon2.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="mainTest.css">
+<!--===============================================================================================-->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-177442704-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-177442704-1');
+</script>
+
+
+</head>
+<body>
+
+
+	<div class="container-contact100">
+
+
+		<!-- particles.js container -->
+		<div id="particles-js"></div>
+
+		<div class="wrap-contact100">
+
+			<div class="contact100-form validate-form" id="main-form">
+				<span class="contact100-form-title">
+					<div id="logo">
+						<img src="logoNew.png" id="logoCat" alt="Logo">
+						</div>
+				</span>
+
+				<div id="info">Sign up with the recipient's name to send them a cat picture, EVERY DAY!</div>
+
+				<div class="wrap-input100 validate-input" data-validate="Name">
+					<!-- <input class="input100" type="text" name="name" placeholder="Full Name"> -->
+					<input class="input100" type="text" id="name" maxlength="80" placeholder="Name (Recipient)"> </input>
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input" data-validate = "Phone Number">
+					<!-- <input class="input100" type="text" name="phone" placeholder="Phone"> -->
+					<input class="input100" type="tel" id="number" placeholder="Phone Number"> </input>
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input" data-validate = "Personal Message">
+					<!-- <textarea class="input100" name="message" placeholder="Your Message"></textarea> -->
+					<textarea class="input100" rows="1" style="height:1em;" id="message" maxlength="900" rows="50" placeholder="Personal Message"></textarea>
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100-form" data-validate = "Timezone" id="timezoneOuter">
+					<!-- <textarea class="input100" name="message" placeholder="Your Message"></textarea> -->
+					<div id="timezone" class="input100-form"></div>
+
+
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="input100-form-check" data-validate = "Premium">
+					<!-- <textarea class="input100" name="message" placeholder="Your Message"></textarea> -->
+
+					<div class="inputGroup">
+						<input type="checkbox" id="premium" class="check" name="premium" onclick="checkPremium()">
+						<label for="premium"><div id="intText">Buy Premium: $2.00 for 30 days</div>
+							<div class="popup" class="placeholder" onclick="changeDiv(9); return false;">Is Premium Required?</div>
+						</label>
+						</div>
+
+					<span class="focus-input100"></span>
+				</div>
+
+
+				<div id="all-payment">
+
+					<div id="payment-regular"></div>
+
+					<div id="payment-request-button">
+					  <!-- A Stripe Element will be inserted here.
+					  goodmeowning-->
+					</div>
+				</div>
+
+				<div class="container-contact100-form-btn">
+					<button type="submit" class="contact100-form-btn" id="signup" onclick="validateNoPremium()">
+						<span>
+							<i class="fa fa-paper-plane-o m-r-6" aria-hidden="true"></i>
+							Sign Up!
+						</span>
+					</button>
+				</div>
+				</div>
+			</div>
+
+			<div class="footer">
+				<p>
+					<span id="genInfo" onclick="changeDiv(10);">More Info</span>
+					&nbsp; &nbsp; &nbsp;
+					<span id="QA" onclick="changeDiv(11);">Q&A</span> 
+					&nbsp; &nbsp; &nbsp;
+					<a href="dailyImage.html">Cat of the Day!</a>
+					&nbsp; &nbsp; &nbsp;
+					<a href="privacy.html">Privacy Policy</a>
+				</p>
+			</div>
+
+		</div>
+
+	<div id="dropDownSelect1"></div>
+
+	<!-- The Modal -->
+	<div id="myModal" class="modal">
+
+	<!-- Modal content -->
+	<div class="modal-content">
+		<span class="close">&times;</span>
+		<div id="modal_text">
+
+		</div>
+	</div>
+	</div>
+
+<!-- The actual snackbar -->
+<div id="snackbar">Welcome to the Launch of MorningMeow! feel free to sign yourself and friends up! 🐈</div>
+
+
+
+<script src="particles.js"></script>
+
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+<!--==============<script src="js/main.js"></script>===========================================-->
+
+	<script src="handleAlerts.js"></script>
+	<script src="timezone.js"></script>
+	<script src="script.js"></script>
+	<script src="client.js"></script>
+	<script src="socket.js"></script>
+	<script src="validate.js"></script>
+	<script src="misc.js"></script>
+	<script src="particles.js"></script>
+	<script src="app.js"></script>
+	<!-- <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>  -->
+</body>
+</html>
