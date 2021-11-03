@@ -1,0 +1,11 @@
+/MCI
+/MCI_1
+*.db
+*.crt
+*.key
+*.ca-bundle
+ngrok
+*.pickle
+stripeServer.py
+*.ca
+*.json
