@@ -56,8 +56,8 @@ app.get('/secret', async (req, res) => {
 });
 
 https.createServer({
-  key: fs.readFileSync('server.key'),
-  cert: fs.readFileSync('server.crt')
+  key: fs.readFileSync(auth_dict[server_key_path]),
+  cert: fs.readFileSync(auth_dict[server_crt_path])
 }, app).listen(3000, () => {
   console.log('Running on port 3000');
 });
