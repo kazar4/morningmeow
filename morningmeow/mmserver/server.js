@@ -7,10 +7,11 @@ var fs = require('fs')
 var https = require('https')
 const app = express();
 
-auth_dict = {}
+var auth_dict = {}
 
 fs.readFile('../authFiles.txt', 'utf8' , (err, data) => {
   if (err) {
+    console.log("GPT HEsadkqsjdhqwjoeilEEEEEEEEEEEE")
     console.error(err)
     return
   }
@@ -22,42 +23,41 @@ fs.readFile('../authFiles.txt', 'utf8' , (err, data) => {
     let v = temp_data[i].split(":")[1]
     auth_dict[k] = v
   }
-  console.log(auth_dict)
-})
 
-const stripe = require('stripe')(auth_dict['stripe_secret_key']);
+  const stripe = require('stripe')(auth_dict['stripe_secret_key']);
 
-var allowedOrigins = ['http://morningmeow.com:3000', 'http://morningmeow.com', 'https://morningmeow.com:3000', 'https://morningmeow.com']
-app.use(cors({
-    origin: function (origin, callback){
-        if (!origin) return callback(null, true);
+  var allowedOrigins = ['http://morningmeow.com:3000', 'http://morningmeow.com', 'https://morningmeow.com:3000', 'https://morningmeow.com']
+  app.use(cors({
+      origin: function (origin, callback){
+          if (!origin) return callback(null, true);
 
-        if(allowedOrigins.indexOf(origin) === -1){
-            var msg = 'The COS policty for this site does not ' +
-            'allow adcess from the specified Origin.';
-            return callback(new Error(msg), false);
-        }
-        return callback(null, true)
-    }
+          if(allowedOrigins.indexOf(origin) === -1){
+              var msg = 'The COS policty for this site does not ' +
+              'allow adcess from the specified Origin.';
+              return callback(new Error(msg), false);
+          }
+          return callback(null, true)
+      }
 
-}));
+  }));
 
-app.get('/secret', async (req, res) => {
+  app.get('/secret', async (req, res) => {
 
-  const intent = await stripe.paymentIntents.create({
-    amount: 200,
-    currency: 'usd',
-    capture_method:'manual',
-    // Verify your integration in this guide by including this parameter
-    metadata: {integration_check: 'accept_a_payment'},
+    const intent = await stripe.paymentIntents.create({
+      amount: 200,
+      currency: 'usd',
+      capture_method:'manual',
+      // Verify your integration in this guide by including this parameter
+      metadata: {integration_check: 'accept_a_payment'},
+    });
+
+    res.json({client_secret: intent.client_secret});
   });
 
-  res.json({client_secret: intent.client_secret});
-});
-
-https.createServer({
-  key: fs.readFileSync(auth_dict["server_key_path"]),
-  cert: fs.readFileSync(auth_dict["server_crt_path"])
-}, app).listen(3000, () => {
-  console.log('Running on port 3000');
-});
+  https.createServer({
+    key: fs.readFileSync(auth_dict["server_key_path"]),
+    cert: fs.readFileSync(auth_dict["server_crt_path"])
+  }, app).listen(3000, () => {
+    console.log('Running on port 3000');
+  });
+})
