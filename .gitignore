@@ -11,3 +11,5 @@ stripeServer.py
 *.json
 authFiles.txt
 token.pickle
+/node_modules
+node_modules/
