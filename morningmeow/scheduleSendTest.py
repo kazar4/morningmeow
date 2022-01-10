@@ -9,6 +9,7 @@ def millis(time1, time2):
    return ms
 
 array = fileManage2.arrayOfDatabase()
+print("array of current db, delete later: ", array)
 for row in array:
     try:
         tz = row[3]
