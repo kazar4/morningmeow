@@ -19,6 +19,8 @@ import time as t
 from PIL import Image, ExifTags
 from PIL.ExifTags import TAGS
 
+from util import readAuthFiles
+
 listOfCarriersNoPremium = ['AT&T Wireless', 'Sprint Spectrum, L.P.']
 
 Carrier_Gateway = {'AT&T Wireless': 'mms.att.net',
@@ -27,9 +29,9 @@ Carrier_Gateway = {'AT&T Wireless': 'mms.att.net',
                  'Cricket Wireless - ATT - SVR': 'mms.cricketwireless.net',
                  'Sprint Spectrum, L.P.': 'pm.sprint.com'}
 
-maxDay = 2;
+maxDay = 3;
 
-stripe.api_key = 'sk_test_51H4YfzIYmqiZIs9Rm1bZheL9QeTLcg49FWtbX6aZXOR2RSIEkjICr2gOX8Ji5AoIkHYD9YWEuBFoyoFbf2A5uXnr00G18ReE8H'
+stripe.api_key = readAuthFiles("./authFiles.txt")["stripe_secret_key"]
 
 
 welcome_text = "Hello {}, and welcome to the offical launch of " \

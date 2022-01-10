@@ -3,6 +3,8 @@ from email.mime.image import MIMEImage
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
+from util import readAuthFiles
+
 import fileManage2
 
 def handleMail(row, type):
@@ -32,7 +34,7 @@ def handleMail(row, type):
 def sendMail(number, carrier, text, day):
     #setup
     email = "morningmeow0"
-    pas = "onsgfxghfnnkgvxi"
+    pas = readAuthFiles("./authFiles.txt")["morningmeow0@gmail.com_pass"]
     sms_gateway = '{}@{}'.format(number, fileManage2.Carrier_Gateway[carrier])
 
     #make server

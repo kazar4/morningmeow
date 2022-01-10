@@ -1,4 +1,5 @@
 from twilio.rest import Client
+from util import readAuthFiles
 
 """
 phone_number = client.lookups \
@@ -11,9 +12,9 @@ print(phone_number.carrier['name']) # Just the carrier name.
 
 def look(number):
     # Your Account SID from twilio.com/console
-    account_sid = "SK83af3f72432b39001de0b6cd758db8be"
+    account_sid = readAuthFiles("./authFiles.txt")["twilio_account_sid"]
     # Your Auth Token from twilio.com/console
-    auth_token = "6Oh2f1u1y09AWnpdv1xKrC3gFu8xpQXg"
+    auth_token = readAuthFiles("./authFiles.txt")["twilio_auth_token"]
 
     client = Client(account_sid, auth_token)
 

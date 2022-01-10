@@ -1,4 +1,5 @@
 from twilio.rest import Client
+from util import readAuthFiles
 
 import fileManage2
 
@@ -26,9 +27,9 @@ def handleMMS(row, type):
 
 def sendMMS(number, text, day):
     # Your Account SID from twilio.com/console
-    account_sid = "AC8c8d2bf0f4417c73d534c54ac9677968"
+    account_sid = readAuthFiles("./authFiles.txt")["twilio_account_sid"]
     # Your Auth Token from twilio.com/console
-    auth_token = "a5896395dc0421e6232d946b577703cd"
+    auth_token = readAuthFiles("./authFiles.txt")["twilio_auth_token"]
 
     client = Client(account_sid, auth_token)
 

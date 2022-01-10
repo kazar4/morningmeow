@@ -1,5 +1,6 @@
 from flask import Flask, request
 from twilio import twiml
+from util import readAuthFiles
 
 import sys
 sys.path.append("..")
@@ -15,6 +16,7 @@ import stripe
 app = Flask(__name__)
 cors = CORS(app)
 
+# use correct crt and key files from authFiles
 #run this in CL with wgsi.py to start server [gunicorn --bind 0.0.0.0:5000 --certfile=server.crt --keyfile=server.key --ca-certs=server.ca-bundle wsgi:app]
 
 @app.route('/sms', methods=['POST'])
@@ -52,7 +54,7 @@ def test():
 
 
 # You can find your endpoint's secret in your webhook settings
-endpoint_secret = 'whsec_bEDWmpuh2ocNrMBHwsxm2hfIBRfYON4v'
+endpoint_secret = readAuthFiles("./authFiles.txt")["stripe_webhook_signing_secret"]
 
 @app.route("/webhook", methods=['POST'])
 @cross_origin()

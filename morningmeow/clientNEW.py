@@ -16,10 +16,16 @@ import time as t
 
 import stripe
 
-ssl_context = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
-ssl_context.load_cert_chain('server.crt', 'server.key')
+from util import readAuthFiles
 
-stripe.api_key = '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'
+ssl_context = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
+
+server_crt_path = readAuthFiles("./authFiles.txt")["server_crt_path"]
+server_key_path = readAuthFiles("./authFiles.txt")["server_key_path"]
+
+ssl_context.load_cert_chain(server_crt_path, server_key_path)
+
+stripe.api_key = readAuthFiles("./authFiles.txt")["stripe_secret_key"]
 
 #remember to add handlers for errors to send back if something weird happens
 

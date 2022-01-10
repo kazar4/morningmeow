@@ -9,3 +9,5 @@ ngrok
 stripeServer.py
 *.ca
 *.json
+authFiles.txt
+token.pickle
