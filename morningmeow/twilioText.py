@@ -15,7 +15,7 @@ def handleMMS(row, type):
         if day_pass != fileManage2.maxDay:
             sendMMS(number, "", day)
         elif day_pass == fileManage2.maxDay:
-            sendMMS(number, fileManage2.day_pass_text.format(fileManage2.maxDay), 0)
+            sendMMS(number, fileManage2.day_pass_text.format(fileManage2.maxDay, fileManage2.maxDay), day)
             fileManage2.deleteData(number)
     elif type == "welcome":
         sendMMS(number, fileManage2.welcome_text.format(name, message), day)
