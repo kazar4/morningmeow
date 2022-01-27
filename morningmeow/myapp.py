@@ -31,8 +31,8 @@ def sms():
     message_body = request.form['Body']
 
     if "STOP" in message_body and fileManage2.checkNumber(number):
-        fileManage2.deleteData(number)
         handleMMS(fileManage2.returnVals(number), "end")
+        fileManage2.deleteData(number)
         print("SMS text included this body: {}".format(message_body))
         print("Deleting {} from Database".format(number))
     elif "BUG" in message_body:

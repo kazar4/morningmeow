@@ -195,6 +195,7 @@ def returnVals(number):
     array = []
     for row in value:
         array = row
+    print(array)
 
     conn.commit()
     return array
