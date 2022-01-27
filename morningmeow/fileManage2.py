@@ -34,10 +34,12 @@ maxDay = 30;
 stripe.api_key = readAuthFiles("./authFiles.txt")["stripe_secret_key"]
 
 
-welcome_text = "Hello {}, and welcome to the offical launch of " \
-                "MorningMeow! respond with \"STOP.\" to cancel. \n\nIf you find a bug or issue " \
-                'it would help us a lot if you could send a text back as follows \n"BUG (issue here without parentheses)"' \
+welcome_text = "Hello {}, and welcome to " \
+                "MorningMeow! respond with \"STOP.\" to cancel." \
                 "\n\nHere is a message from the person who signed you up:\n\n{}"
+
+#\n\nIf you find a bug or issue "
+#             'it would help us a lot if you could send a text back as follows \n"BUG (issue here without parentheses)"' \
 
 day_pass_text = "Thanks for sticking with us for these last {} days, if you enjoyed the cats and it helped brighten your mornings, please consider signing up again, at morningmeow.com"
 #day_pass_text = "Here is your last cat for , if you enjoyed these past {} days and it helped brighten your mornings, please consider signing up again, at morningmeow.com"
