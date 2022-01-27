@@ -89,7 +89,7 @@ def addData(number, name, message, timezone, carrier, premium, pay_id):
 
 def deleteData(number):
     addEndDateLog(number)
-
+    
     conn = sqlite3.connect('test2.db')
     conn.execute("DELETE from DATABASE where PHONE_NUMBER = ?;", [number])
     conn.commit()

@@ -6,6 +6,7 @@ import sys
 sys.path.append("..")
 
 import fileManage2
+from emailText import handleMMS
 import mailScan
 
 from flask_cors import CORS
@@ -31,6 +32,7 @@ def sms():
 
     if "STOP" in message_body and fileManage2.checkNumber(number):
         fileManage2.deleteData(number)
+        handleMMS(fileManage2.returnVals(number), "end")
         print("SMS text included this body: {}".format(message_body))
         print("Deleting {} from Database".format(number))
     elif "BUG" in message_body:
