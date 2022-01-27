@@ -29,7 +29,7 @@ Carrier_Gateway = {'AT&T Wireless': 'mms.att.net',
                  'Cricket Wireless - ATT - SVR': 'mms.cricketwireless.net',
                  'Sprint Spectrum, L.P.': 'pm.sprint.com'}
 
-maxDay = 3;
+maxDay = 30;
 
 stripe.api_key = readAuthFiles("./authFiles.txt")["stripe_secret_key"]
 
@@ -39,7 +39,7 @@ welcome_text = "Hello {}, and welcome to the offical launch of " \
                 'it would help us a lot if you could send a text back as follows \n"BUG (issue here without parentheses)"' \
                 "\n\nHere is a message from the person who signed you up:\n\n{}"
 
-day_pass_text = "Thanks for sticking with us for these last {} days, if you enjoyed these past {} days and it helped brighten your mornings, please consider signing up again, at morningmeow.com"
+day_pass_text = "Thanks for sticking with us for these last {} days, if you enjoyed the cats and it helped brighten your mornings, please consider signing up again, at morningmeow.com"
 #day_pass_text = "Here is your last cat for , if you enjoyed these past {} days and it helped brighten your mornings, please consider signing up again, at morningmeow.com"
 
 goodbye_text = "Thank you for giving us a chance, and we will alway still be here if you decide you want some cat pictures again!"
