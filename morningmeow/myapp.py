@@ -6,7 +6,7 @@ import sys
 sys.path.append("..")
 
 import fileManage2
-from emailText import handleMMS
+from twilioText import handleMMS
 import mailScan
 
 from flask_cors import CORS
