@@ -2,7 +2,7 @@
 A web app that sends a picture of a cat to your phone every morning
 <img src="https://github.com/kazar4/morningmeow/blob/master/html/LogoNew2.png" width="600">
 
-Visit at https://morningmeow.com (service currently down as cats pictures need to be reloaded)
+Visit at https://morningmeow.com
 
 ### html/
 Includes all files associated with front end
