@@ -5,6 +5,8 @@ phone_number = document.getElementById("number");
 timezone = document.getElementById("timezoneVal");
 timezoneText = document.getElementById("timezoneDefText");
 timezoneOuter = document.getElementById("timezoneOuter");
+terms_val = document.getElementById("terms");
+termsOuter = document.getElementById("termsOuter");
 
 function validateNoPremium() {
     if(!validateForm()) {
@@ -36,6 +38,7 @@ function validateForm(){
     nameBool = false;
     numberBool = false;
     timezoneBool = false;
+    termsBool = false;
 
     if (name_val.value != ""){
         console.log("valid name")
@@ -60,7 +63,13 @@ function validateForm(){
         timezoneOuter.style.border = "medium inset #0056b3";
     }
 
-    return nameBool && numberBool && timezoneBool
+    if (terms_val.checked == true) {
+        termsBool = true;
+    } else {
+        termsOuter.style.border = "medium inset #0056b3";
+    }
+
+    return nameBool && numberBool && timezoneBool && termsBool
 }
 
 
