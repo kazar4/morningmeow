@@ -2,6 +2,9 @@
 
 # WS server that sends messages at random intervals
 
+import traceback
+import sys
+
 import asyncio
 
 import websockets as websockets
@@ -55,21 +58,23 @@ async def time(websocket, path):
                     #Code for checking that they actually have premium
                     t_end = t.time() + 60 * 0.2
                     while t.time() < t_end:
-                        if fileManage2.checkConfirmedPaymentIntent(clientIntentVal):
-                            
+                        foundPayIntent = fileManage2.checkConfirmedPaymentIntent(clientIntentVal)
+                        print(foundPayIntent, clientIntentVal)
+                        if foundPayIntent:
+
                             ID = fileManage2.getConfirmedPaymentIntentID(clientIntentVal)
                             print("Trying to confirm payment with: " + ID)
 
                             if (ID != ""):
                                 try:
-                                
+
                                     intent = stripe.PaymentIntent.capture(
                                         ID,
                                         amount_to_capture=200
                                     )
                                 except:
                                     intent = stripe.PaymentIntent.cancel(ID)
-                                    raise Exception('6')                                    
+                                    raise Exception('6')
 
                             fileManage2.removeConfirmedPaymentIntent(clientIntentVal)
                             raise Exception('3')
@@ -93,6 +98,7 @@ async def time(websocket, path):
                     raise Exception('3')
 
             except Exception as inst:
+                print(traceback.format_exc())
                 value = inst.args[0]
                 print("value for {} is {}".format(number, value))
                 await websocket.send(value)

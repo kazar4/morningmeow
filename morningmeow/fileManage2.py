@@ -21,7 +21,7 @@ from PIL.ExifTags import TAGS
 
 from util import readAuthFiles
 
-listOfCarriersNoPremium = ['AT&T Wireless', 'Sprint Spectrum, L.P.']
+listOfCarriersNoPremium = ['Sprint Spectrum, L.P.']
 
 Carrier_Gateway = {'AT&T Wireless': 'mms.att.net',
                  'Verizon Wireless': 'vzwpix.com',
