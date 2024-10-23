@@ -30,9 +30,7 @@ To get around this a separate service is used that costs money per text.
 <br>
 <br>
 Purchasing premium allows us to pay for this service and fund future projects. Note, this is not a subscription, and you will only be billed once.
-<br>
-<br>
-Message and data rates may apply.
+
 </p>`
 
 phoneUsedText =
