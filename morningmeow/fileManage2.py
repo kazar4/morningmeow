@@ -37,7 +37,7 @@ stripe.api_key = readAuthFiles("./authFiles.txt")["stripe_secret_key"]
 welcome_text = "Hello {}, and welcome to " \
                 "MorningMeow! respond with \"STOP.\" to cancel.\n\n" \
                 "More information can be found at https://morningmeow.com\n\n" \
-                "\n\nHere is a message from the person who signed you up:\n\n{}"
+                "Here is a message from the person who signed you up:\n\n{}"
 
 #\n\nIf you find a bug or issue "
 #             'it would help us a lot if you could send a text back as follows \n"BUG (issue here without parentheses)"' \
