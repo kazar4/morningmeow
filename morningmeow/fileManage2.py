@@ -35,7 +35,8 @@ stripe.api_key = readAuthFiles("./authFiles.txt")["stripe_secret_key"]
 
 
 welcome_text = "Hello {}, and welcome to " \
-                "MorningMeow! respond with \"STOP.\" to cancel." \
+                "MorningMeow! respond with \"STOP.\" to cancel.\n\n" \
+                "More information can be found at https://morningmeow.com\n\n" \
                 "\n\nHere is a message from the person who signed you up:\n\n{}"
 
 #\n\nIf you find a bug or issue "
@@ -44,7 +45,7 @@ welcome_text = "Hello {}, and welcome to " \
 day_pass_text = "Thanks for sticking with us for these last {} days, if you enjoyed the cats and it helped brighten your mornings, please consider signing up again, at morningmeow.com"
 #day_pass_text = "Here is your last cat for , if you enjoyed these past {} days and it helped brighten your mornings, please consider signing up again, at morningmeow.com"
 
-goodbye_text = "Thank you for giving us a chance, and we will alway still be here if you decide you want some cat pictures again!"
+goodbye_text = "You have opted out of MorningMeow. Thank you for giving us a chance, and we will alway still be here if you decide you want some cat pictures again!"
 
 bug_text = "Bug Report Received, Thank You!"
 

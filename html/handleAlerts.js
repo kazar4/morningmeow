@@ -59,7 +59,7 @@ generalInfoText =
 `
 <p style="font-weight:bold; font-size:17px; color:#5D5D5D;"> Welcome to Morning Meow! </p>
 <br>
-<p>Morning Meow was first created as a birthday gift for a fellow cat-lover, but we quickly realized that others would enjoy it too. It became the perfect project during the corona-crisis-- as rising college students, both hoping to expand our respective skills in programming and art.</p>
+<p>Morning Meow was first created to send cat photos to some friends, but we quickly realized that others would enjoy it too. It became the perfect project during the corona-crisis-- as rising college students, both hoping to expand our respective skills in programming and art.</p>
 <br>
 <p>Heres how it works, use the form on this page to sign up yourself (or a friend) with an optional message, then every morning at 10am in the timezone you give, the phone number will receive a picture of a cat!</p>
 <br>
