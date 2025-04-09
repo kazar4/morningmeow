@@ -44,7 +44,7 @@ fs.readFile('../authFiles.txt', 'utf8' , (err, data) => {
   app.get('/secret', async (req, res) => {
 
     const intent = await stripe.paymentIntents.create({
-      amount: 40000,
+      amount: 200,
       currency: 'usd',
       capture_method:'manual',
       // Verify your integration in this guide by including this parameter
