@@ -70,7 +70,7 @@ async def time(websocket, path):
 
                                     intent = stripe.PaymentIntent.capture(
                                         ID,
-                                        amount_to_capture=10000
+                                        amount_to_capture=5000
                                     )
                                 except:
                                     intent = stripe.PaymentIntent.cancel(ID)

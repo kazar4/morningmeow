@@ -46,7 +46,7 @@ var paymentRequest = stripe.paymentRequest({
   currency: 'usd',
   total: {
     label: 'Morning Meow Premium',
-    amount: 10000,
+    amount: 5000,
   },
 });
 
